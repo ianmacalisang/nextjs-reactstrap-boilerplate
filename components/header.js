@@ -18,8 +18,6 @@ const navLinks = [
   return link
 })
 
-
-
 const NavMenu = props => {
 
   const [isOpen, setIsOpen] = useState(false)
