@@ -5,6 +5,7 @@ import {
 } from 'reactstrap'
 
 import NavMenu from '../header'
+import Footer from '../footer'
 
 const Layout = props => (
   <React.Fragment>
@@ -16,6 +17,7 @@ const Layout = props => (
     <Container>
         {props.children}
     </Container>
+    <Footer/>
   </React.Fragment>
 )
 

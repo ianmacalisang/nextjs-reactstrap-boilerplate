@@ -1,5 +1,11 @@
 import React from 'react'
 import Layout from '../components/layouts/mainLayout'
+
+import {
+  Row,
+  Col
+} from 'reactstrap'
+
 import BlogArchive from '../components/blogs/archive'
 
 const Blogs = props => (
@@ -7,20 +13,16 @@ const Blogs = props => (
     <Layout
     title="Blogs"
     >
-        <BlogArchive 
-        data={props.blogs}
-        />
+      <Row>
+        <Col sm='9'>
+          <BlogArchive />
+        </Col>
+        <Col sm='3'>
+          <h1>Right col</h1>
+        </Col>
+      </Row>
     </Layout>
-  </React.Fragment>
+    </React.Fragment>
 )
-
-Blogs.getInitialProps = async function() {
-    const res = await fetch('https://api.xpertise.ae/blogs?_sort=id:DESC&_start=0&_limit=10');
-    const data = await res.json();
-    
-    return {
-      blogs: data
-    };
-};
 
 export default Blogs
